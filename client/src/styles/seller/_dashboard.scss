@@ -1,0 +1,151 @@
+.seller-dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f8f9fa;
+
+  // Widget Section
+  .widget-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+
+    .widget {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .widget-info {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        svg {
+          font-size: 2rem;
+          color: $color3;
+        }
+
+        div {
+          flex: 1;
+
+          p {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+          }
+
+          h4 {
+            font-size: 1.5rem;
+            color: $color4;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .widget-circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  // Charts Section
+  .charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 2rem;
+
+    .chart-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+      h2 {
+        color: $color4;
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // Recent Orders Section
+  .recent-orders {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: auto; 
+
+    h2 {
+      color: $color4;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th, td {
+        padding: 1.5rem;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+
+      th {
+        font-weight: 500;
+        color: $color4;
+        background: #f8f9fa;
+      }
+
+      .status {
+        padding: 0.3rem 0.7rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align:center;
+        
+
+        &.processing { 
+          background: #fff3e0;
+          color: #f57c00; 
+        }
+        &.shipped { 
+          background: #e3f2fd;
+          color: #1976d2; 
+        }
+        &.delivered { 
+          background: #e8f5e9;
+          color: #388e3c; 
+        }
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: $mobile) {
+    padding: 1rem;
+
+    .charts-container {
+      grid-template-columns: 1fr;
+    }
+
+    table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}
